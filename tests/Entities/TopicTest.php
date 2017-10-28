@@ -32,4 +32,15 @@ final class TopicTest extends TestCase
             $element->getTitle()
         );
     }
+
+    public function testToString()
+    {
+        $topic = new Topic;
+        $topic->setTitle(new TopicTitle('test'));
+
+        self::assertEquals(
+            'test',
+            $topic
+        );
+    }
 }

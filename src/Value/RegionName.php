@@ -9,26 +9,26 @@
 namespace AlexGunkel\Value;
 
 /**
- * Class ProjectTitle
+ * Class RegionName
  * @package AlexGunkel\Value
  *
  * @Embeddable
  */
-class ProjectTitle
+class RegionName
 {
     /**
      * @var string
      * @Column(type="string")
      */
-    private $title;
+    private $name;
 
-    public function __construct(string $title)
+    public function __construct(string $name)
     {
-        $this->title = $title;
+        $this->name = $name;
     }
 
     public function __toString(): string
     {
-        return $this->title;
+        return $this->name;
     }
 }

@@ -32,4 +32,15 @@ final class WskElementTest extends TestCase
             $element->getTitle()
         );
     }
+
+    public function testToString()
+    {
+        $element = new WskElement;
+        $element->setTitle(new WskTitle('test'));
+
+        self::assertEquals(
+            'test',
+            $element
+        );
+    }
 }

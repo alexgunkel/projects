@@ -8,9 +8,18 @@
 
 namespace AlexGunkel\Value;
 
-
+/**
+ * Class TopicTitle
+ * @package AlexGunkel\Value
+ *
+ * @Embeddable
+ */
 class TopicTitle
 {
+    /**
+     * @var string
+     * @Column(type="string")
+     */
     private $title;
 
     public function __construct(string $title)

@@ -11,10 +11,23 @@ namespace AlexGunkel\Entities;
 
 use AlexGunkel\Value\WskTitle;
 
+/**
+ * Class WskElement
+ * @package AlexGunkel\Entities
+ *
+ * @Entity @Table(name="wsk_elements")
+ */
 class WskElement
 {
     /**
+     * @var integer
+     * @Id @Column(type="integer") @GeneratedValue
+     */
+    private $id;
+
+    /**
      * @var WskTitle
+     * @Embedded(class="AlexGunkel\Value\WskTitle", columnPrefix=false)
      */
     private $title;
 
@@ -34,5 +47,10 @@ class WskElement
     {
         $this->title = $title;
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->getTitle();
     }
 }

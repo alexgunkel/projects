@@ -8,9 +8,18 @@
 
 namespace AlexGunkel\Value;
 
-
+/**
+ * Class WskTitle
+ * @package AlexGunkel\Value
+ *
+ * @Embeddable
+ */
 class WskTitle
 {
+    /**
+     * @var string
+     * @Column(type="string")
+     */
     private $title;
 
     public function __construct(string $title)
