@@ -16,4 +16,9 @@ trait Identifier
      * @Id @Column(type="integer") @GeneratedValue
      */
     private $id;
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
 }
