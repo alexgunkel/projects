@@ -14,5 +14,10 @@
         }
     ],
     "minimum-stability": "alpha",
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "AlexGunkel\\": "src/"
+        }
+    }
 }
