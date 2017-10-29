@@ -108,14 +108,14 @@ class DatabaseConfiguration
         return $this;
     }
 
-    public function asArray()
+    public function asArray(): array
     {
         return [
             'driver'   => 'pdo_mysql',
-            'host'     =>  $this->host,
-            'user'     =>  $this->user,
-            'password' =>  $this->password,
-            'dbname'   =>  $this->database,
+            'host'     =>  (string) $this->host,
+            'user'     =>  (string) $this->user,
+            'password' =>  (string) $this->password,
+            'dbname'   =>  (string) $this->database,
         ];
     }
 }

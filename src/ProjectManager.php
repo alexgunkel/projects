@@ -33,7 +33,9 @@ class ProjectManager
         $isDevMode = true;
         $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__), $isDevMode);
 
-        $this->entityManager = EntityManager::create($configuration->asArray(), $config);
+        $db_config = $configuration->asArray();
+
+        $this->entityManager = EntityManager::create($db_config, $config);
     }
 
     public function add(Project $project): self

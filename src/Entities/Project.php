@@ -10,6 +10,8 @@ namespace AlexGunkel\Entities;
 
 
 use AlexGunkel\Traits\Identifier;
+use AlexGunkel\Value\Description;
+use AlexGunkel\Value\Link;
 use AlexGunkel\Value\ProjectTitle;
 
 /**
@@ -43,6 +45,61 @@ class Project
      * @JoinColumn(name="wsk_element_id", referencedColumnName="id")
      */
     private $wskElement;
+
+    /**
+     * @var Description
+     * @Embedded(class="AlexGunkel\Value\Description", columnPrefix = "description_")
+     */
+    private $description;
+
+    /**
+     * @var Link
+     * @Embedded(class="AlexGunkel\Value\Link", columnPrefix = "link_")
+     */
+    private $link;
+
+    /**
+     * @return Link
+     */
+    public function getLink(): Link
+    {
+        return $this->link;
+    }
+
+    /**
+     * @param string $link
+     * @return Project
+     */
+    public function setLink(string $link): Project
+    {
+        $this->link = new Link($link);
+        return $this;
+    }
+
+    /**
+     * Project constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * @return Description
+     */
+    public function getDescription(): Description
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     * @return Project
+     */
+    public function setDescription(string $description): Project
+    {
+        $this->description = new Description($description);
+        return $this;
+    }
 
     /**
      * @return WskElement
@@ -89,12 +146,12 @@ class Project
     }
 
     /**
-     * @param ProjectTitle $title
+     * @param string $title
      * @return Project
      */
-    public function setTitle(ProjectTitle $title): Project
+    public function setTitle(string $title): Project
     {
-        $this->title = $title;
+        $this->title = new ProjectTitle($title);
         return $this;
     }
 
