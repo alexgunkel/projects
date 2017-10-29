@@ -10,6 +10,7 @@ namespace AlexGunkel;
 
 
 use AlexGunkel\Entities\Project;
+use AlexGunkel\Entities\Topic;
 use AlexGunkel\Persistence\ProjectRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\Setup;
@@ -50,5 +51,12 @@ class ProjectManager
     {
         $projectRepository = new ProjectRepository($this->entityManager);
         return $projectRepository->findAll();
+    }
+
+    public function getPossibleTopics(): array
+    {
+        $topicRepository = $this->entityManager->getRepository(Topic::class);
+
+        return $topicRepository->findAll();
     }
 }
