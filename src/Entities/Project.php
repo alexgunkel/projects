@@ -34,7 +34,7 @@ class Project
      * @var Topic
      *
      * @ManyToOne(targetEntity="\AlexGunkel\Entities\Topic")
-     * @JoinColumn(name="topic_id", referencedColumnName="id")
+     * @JoinColumn(name="topic_uid", referencedColumnName="uid")
      */
     private $topic;
 
@@ -42,7 +42,7 @@ class Project
      * @var WskElement
      *
      * @ManyToOne(targetEntity="\AlexGunkel\Entities\WskElement")
-     * @JoinColumn(name="wsk_element_id", referencedColumnName="id")
+     * @JoinColumn(name="wsk_element_uid", referencedColumnName="uid")
      */
     private $wskElement;
 

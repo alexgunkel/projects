@@ -15,10 +15,10 @@ trait Identifier
      * @var integer
      * @Id @Column(type="integer") @GeneratedValue
      */
-    private $id;
+    private $uid;
 
-    public function getId(): int
+    public function getUid(): int
     {
-        return $this->id;
+        return $this->uid;
     }
 }

@@ -40,7 +40,7 @@ class ProjectRepository
         $this->entityManager->persist($project);
         $this->entityManager->flush();
 
-        return $project->getId();
+        return $project->getUid();
     }
 
     public function findByIdentifier(int $identifier): Project

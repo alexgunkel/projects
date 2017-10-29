@@ -9,6 +9,7 @@
 namespace AlexGunkel\Entities;
 
 
+use AlexGunkel\Traits\Identifier;
 use AlexGunkel\Value\WskTitle;
 
 /**
@@ -19,11 +20,7 @@ use AlexGunkel\Value\WskTitle;
  */
 class WskElement
 {
-    /**
-     * @var integer
-     * @Id @Column(type="integer") @GeneratedValue
-     */
-    private $id;
+    use Identifier;
 
     /**
      * @var WskTitle
